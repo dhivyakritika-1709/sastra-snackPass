@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus SnackPass</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+                         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">🍴</span>
+            <span>SASTRA SnackPass</span>
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#tracking">Track Order</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                class="track-nav-btn"
+                onclick="scrollToTracking()"
+            >
+                📦 Track Order
+            </button>
+
+
+            <button
+                class="cart-button"
+                onclick="openCart()"
+            >
+
+                🛒 Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+                         HERO SECTION
+    ====================================================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-content">
+
+            <p class="hero-small-title">
+                CAMPUS FOOD • FAST • EASY
+            </p>
+
+
+            <h1>
+                Skip the Queue.
+                <span>Grab Your Food.</span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                Order your favourite campus food online,
+                track your order and collect it when it is ready.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="scrollToMenu()"
+                >
+                    Explore Menu
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="scrollToTracking()"
+                >
+                    Track My Order
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="images\pizza.jpg"
+                alt="Delicious Pizza"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                       QUICK FEATURES
+    ====================================================== -->
+
+    <section class="features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🍔
+            </div>
+
+            <div>
+                <h3>Choose Food</h3>
+
+                <p>
+                    Browse your favourite campus meals.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🛒
+            </div>
+
+            <div>
+                <h3>Place Order</h3>
+
+                <p>
+                    Add food and confirm your order.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📦
+            </div>
+
+            <div>
+                <h3>Track Order</h3>
+
+                <p>
+                    Know exactly when your food is ready.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎟️
+            </div>
+
+            <div>
+                <h3>Collect Food</h3>
+
+                <p>
+                    Show your token and collect your food.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         MENU SECTION
+    ====================================================== -->
+
+    <section
+        class="menu-section"
+        id="menu"
+    >
+
+        <div class="section-heading">
+
+            <p>
+                OUR MENU
+            </p>
+
+            <h2>
+                What are you craving?
+            </h2>
+
+            <span>
+                Fresh, delicious and perfect for your campus break.
+            </span>
+
+        </div>
+
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="categories">
+
+            <button
+                class="category active"
+                onclick="filterFood('All', this)"
+            >
+                All
+            </button>
+
+
+            <button
+                class="category"
+                onclick="filterFood('Burger', this)"
+            >
+                🍔 Burgers
+            </button>
+
+
+            <button
+                class="category"
+                onclick="filterFood('Pizza', this)"
+            >
+                🍕 Pizza
+            </button>
+
+
+            <button
+                class="category"
+                onclick="filterFood('Snacks', this)"
+            >
+                🍟 Snacks
+            </button>
+
+
+            <button
+                class="category"
+                onclick="filterFood('Drinks', this)"
+            >
+                🥤 Drinks
+            </button>
+
+
+            <button
+                class="category"
+                onclick="filterFood('Dessert', this)"
+            >
+                🍰 Desserts
+            </button>
+
+        </div>
+
+
+
+        <!-- FOOD CARDS ARE CREATED BY JAVASCRIPT -->
+
+        <div
+            class="food-grid"
+            id="foodGrid"
+        >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                     ORDER TRACKING SECTION
+    ====================================================== -->
+
+    <section
+        class="tracking-section"
+        id="tracking"
+    >
+
+        <div class="section-heading">
+
+            <p>
+                ORDER TRACKING
+            </p>
+
+            <h2>
+                Track Your Food
+            </h2>
+
+            <span>
+                Follow your order from preparation to collection.
+            </span>
+
+        </div>
+
+
+
+        <!-- ACTIVE ORDER CONTAINER -->
+
+        <div
+            class="tracking-container"
+            id="trackingContainer"
+        >
+
+
+            <!--
+
+                JavaScript will display:
+
+                1. Empty state if there is no active order
+
+                OR
+
+                2. Active order tracking
+
+            -->
+
+            <div
+                class="no-order"
+                id="noOrder"
+            >
+
+                <div class="no-order-icon">
+                    📦
+                </div>
+
+                <h3>
+                    No Active Order
+                </h3>
+
+                <p>
+                    Your active orders will appear here.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="scrollToMenu()"
+                >
+                    Browse Menu
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                     CART OVERLAY
+    ====================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()"
+    >
+    </div>
+
+
+
+    <!-- =====================================================
+                       CART SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="cart-sidebar"
+        id="cartSidebar"
+    >
+
+        <div class="cart-header">
+
+            <div>
+
+                <p class="cart-small-title">
+                    YOUR ORDER
+                </p>
+
+                <h2>
+                    🛒 Cart
+                </h2>
+
+            </div>
+
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+
+        <!-- CART ITEMS -->
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <!-- JavaScript inserts cart items -->
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Your cart is empty
+                </h3>
+
+                <p>
+                    Add something delicious!
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CART BOTTOM -->
+
+        <div class="cart-bottom">
+
+
+            <div class="cart-summary">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <p class="cart-note">
+                Your order will remain active until it is delivered.
+            </p>
+
+
+            <button
+                class="checkout-btn"
+                onclick="confirmOrder()"
+            >
+                Confirm Order
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+                    ORDER CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="confirmationModal"
+    >
+
+        <div class="confirmation-box">
+
+            <button
+                class="modal-close"
+                onclick="closeConfirmation()"
+            >
+                ✕
+            </button>
+
+
+            <div class="confirmation-icon">
+                🎉
+            </div>
+
+
+            <h2>
+                Order Confirmed!
+            </h2>
+
+
+            <p>
+                Your order has been successfully placed.
+            </p>
+
+
+            <div class="token-display">
+
+                <span>
+                    YOUR ORDER TOKEN
+                </span>
+
+                <strong id="confirmationToken">
+                    SP-000000
+                </strong>
+
+            </div>
+
+
+            <p class="token-instruction">
+
+                Keep this token safe. You will need it
+                when collecting your food.
+
+            </p>
+
+
+            <button
+                class="primary-btn full-btn"
+                onclick="viewOrderTracking()"
+            >
+                Track My Order
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+                       ORDER DETAILS MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="trackingModal"
+    >
+
+        <div class="tracking-modal-box">
+
+            <button
+                class="modal-close"
+                onclick="closeTrackingModal()"
+            >
+                ✕
+            </button>
+
+
+            <div class="tracking-modal-header">
+
+                <div>
+                    <p>
+                        ACTIVE ORDER
+                    </p>
+
+                    <h2>
+                        Order Tracking
+                    </h2>
+                </div>
+
+
+                <div class="tracking-token">
+
+                    <span>
+                        TOKEN
+                    </span>
+
+                    <strong id="modalToken">
+                        SP-000000
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDER ITEMS -->
+
+            <div
+                class="modal-order-items"
+                id="modalOrderItems"
+            >
+
+            </div>
+
+
+            <!-- STATUS TRACKER -->
+
+            <div class="status-tracker">
+
+
+                <!-- CONFIRMED -->
+
+                <div
+                    class="status-step"
+                    id="statusConfirmed"
+                >
+
+                    <div class="status-circle">
+                        ✓
+                    </div>
+
+                    <div class="status-info">
+
+                        <h4>
+                            Order Confirmed
+                        </h4>
+
+                        <p>
+                            Your order has been received.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PREPARING -->
+
+                <div
+                    class="status-step"
+                    id="statusPreparing"
+                >
+
+                    <div class="status-circle">
+                        2
+                    </div>
+
+                    <div class="status-info">
+
+                        <h4>
+                            Preparing
+                        </h4>
+
+                        <p>
+                            The canteen is preparing your food.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- READY -->
+
+                <div
+                    class="status-step"
+                    id="statusReady"
+                >
+
+                    <div class="status-circle">
+                        3
+                    </div>
+
+                    <div class="status-info">
+
+                        <h4>
+                            Ready for Pickup
+                        </h4>
+
+                        <p>
+                            Your food is ready to collect.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DELIVERED -->
+
+                <div
+                    class="status-step"
+                    id="statusDelivered"
+                >
+
+                    <div class="status-circle">
+                        4
+                    </div>
+
+                    <div class="status-info">
+
+                        <h4>
+                            Delivered
+                        </h4>
+
+                        <p>
+                            Food collected successfully.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS MESSAGE -->
+
+            <div
+                class="status-message"
+                id="statusMessage"
+            >
+
+                Your order has been confirmed.
+
+            </div>
+
+
+            <!-- ORDER ACTION -->
+
+            <div class="tracking-actions">
+
+                <button
+                    class="secondary-btn"
+                    onclick="closeTrackingModal()"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    class="delivery-btn"
+                    id="deliveryButton"
+                    onclick="advanceOrderStatus()"
+                >
+                    Update Order Status
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+                          FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    🍴 SnackPass
+                </div>
+
+                <p>
+                    Making campus food ordering
+                    faster and easier.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#tracking">
+                    Track Order
+                </a>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                <h4>
+                    Campus SnackPass
+                </h4>
+
+                <p>
+                    Order • Track • Collect
+                </p>
+
+                <p>
+                    📍 Campus Canteen
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Campus SnackPass. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+                         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
