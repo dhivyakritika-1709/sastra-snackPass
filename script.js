@@ -97,7 +97,7 @@ const foodItems = [
         category: "Dessert",
         price: 60,
         description: "Soft donut covered with delicious chocolate glaze.",
-        image: "chocolateBrownie.jpg"
+        image: "hocolateBrownie.jpg"
     }
 
 ];
