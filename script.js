@@ -16,7 +16,7 @@ const foodItems = [
         category: "Burger",
         price: 120,
         description: "Tasty veg Burger",
-        image: "images/burger.jpg"
+        image: "burger.jpg"
     },
 
     {
@@ -25,7 +25,7 @@ const foodItems = [
         category: "Burger",
         price: 100,
         description: "Juicy burger with melted cheese and fresh vegetables.",
-        image: "images/cheese burger.jpg"
+        image: "cheese burger.jpg"
     },
 
     {
@@ -34,7 +34,7 @@ const foodItems = [
         category: "Pizza",
         price: 180,
         description: "Classic pizza with mozzarella, tomato and basil.",
-        image: "images/panner pizza.jpg"
+        image: "panner pizza.jpg"
     },
 
     {
@@ -43,7 +43,7 @@ const foodItems = [
         category: "Pizza",
         price: 220,
         description: "Loaded with pepperoni and delicious melted cheese.",
-        image: "images/pepperoni pizza.jpg"
+        image: "pepperoni pizza.jpg"
     },
 
     {
@@ -52,7 +52,7 @@ const foodItems = [
         category: "Snacks",
         price: 70,
         description: "Golden crispy fries served with ketchup.",
-        image: "images/french fries.jpg"
+        image: "french fries.jpg"
     },
 
     {
@@ -61,7 +61,7 @@ const foodItems = [
         category: "Snacks",
         price: 110,
         description: "Tasty sandwich.",
-        image: "images/sandwich.jpg"
+        image: "sandwich.jpg"
     },
 
     {
@@ -70,7 +70,7 @@ const foodItems = [
         category: "Drinks",
         price: 80,
         description: "Chilled creamy coffee topped with foam.",
-        image: "images/cold coffee.jpg"
+        image: "cold coffee.jpg"
     },
 
     {
@@ -79,7 +79,7 @@ const foodItems = [
         category: "Drinks",
         price: 75,
         description: "Refreshing freshly squeezed orange juice.",
-        image: "images/fresh juice.jpg"
+        image: "fresh juice.jpg"
     },
 
     {
@@ -88,7 +88,7 @@ const foodItems = [
         category: "Dessert",
         price: 100,
         description: "Rich chocolate milkshake with creamy chocolate frosting.",
-        image: "images/chocolate milkshake.jpg"
+        image: "chocolate milkshake.jpg"
     },
 
     {
@@ -97,7 +97,7 @@ const foodItems = [
         category: "Dessert",
         price: 60,
         description: "Soft donut covered with delicious chocolate glaze.",
-        image: "images/chocolateBrownie.jpg"
+        image: "chocolateBrownie.jpg"
     }
 
 ];
